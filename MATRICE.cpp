@@ -6,29 +6,29 @@ using namespace std;
 
 
 MATRICE_V1::MATRICE::MATRICE(int* adr, float* adr2, int row_, int col_) {
-		adress1 = adr;
-		adress2 = adr2;
+		adress_type1.adress1 = adr;
+		adress_type2.adress2 = adr2;
 		row_number = row_;
 		column_number = col_;
 		type = "int";
 	}
 MATRICE_V1::MATRICE::MATRICE(float* adr, float* adr2, int row_, int col_) {
-		adress1f = adr;
-		adress2f = adr2;
+		adress_type1.adress1f = adr;
+		adress_type2.adress2f = adr2;
 		row_number = row_;
 		column_number = col_;
 		type = "float";
 	}
 MATRICE_V1::MATRICE::MATRICE(double* adr, double* adr2, int row_, int col_) {
-		adress1d = adr;
-		adress2d = adr2;
+		adress_type1.adress1d = adr;
+		adress_type2.adress2d = adr2;
 		row_number = row_;
 		column_number = col_;
 		type = "double";
 	}
 MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
-		adress1l = adr;
-		adress2l = adr2;
+		adress_type1.adress1l = adr;
+		adress_type2.adress2l = adr2;
 		row_number = row_;
 		column_number = col_;
 		type = "long";
@@ -39,24 +39,24 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		srand(time(NULL));
 		if (type == "int") {
 			for (int i = 0; i < row_number*column_number; i++) {
-					*(adress1+i)=(rand() % (2*num+1))-num;
+					*(adress_type1.adress1 + i)=(rand() % (2*num+1))-num;
 			}
 		}
 		else if (type == "float") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1f + i) = (rand() % (2*num + 1))-num;
+				*(adress_type1.adress1f + i) = (rand() % (2*num + 1))-num;
 
 			}
 		}
 		else if (type == "double") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1d + i) = (rand() % (2 * num + 1)) - num;
+				*(adress_type1.adress1d + i) = (rand() % (2 * num + 1)) - num;
 
 			}
 		}
 		else if (type == "long") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1l + i) = (rand() % (2 * num + 1)) - num;
+				*(adress_type1.adress1l + i) = (rand() % (2 * num + 1)) - num;
 			}
 		}
 		else {
@@ -67,25 +67,25 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		srand(time(NULL));
 		if (type == "int") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1 + i) = (rand() % (2 * num + 1)) - num;
+				*(adress_type1.adress1 + i) = (rand() % (2 * num + 1)) - num;
 
 			}
 		}
 		else if (type == "float") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1f + i) = (rand() % (2 * num + 1)) - num;
+				*(adress_type1.adress1f + i) = (rand() % (2 * num + 1)) - num;
 
 			}
 		}
 		else if (type == "double") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1d + i) = (rand() % (2 * num + 1)) - num;
+				*(adress_type1.adress1d + i) = (rand() % (2 * num + 1)) - num;
 
 			}
 		}
 		else if (type == "long") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1l + i) = (rand() % (2 * num + 1)) - num;
+				*(adress_type1.adress1l + i) = (rand() % (2 * num + 1)) - num;
 			}
 		}
 		else {
@@ -97,25 +97,25 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		srand(time(NULL));
 		if (type == "int") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1 + i) = rand() % (static_cast<int>(2*num+1-num));
+				*(adress_type1.adress1 + i) = rand() % (static_cast<int>(2*num+1-num));
 
 			}
 		}
 		else if (type == "float") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1f + i) = rand() % (static_cast<int>(2 * num + 1 - num));
+				*(adress_type1.adress1f + i) = rand() % (static_cast<int>(2 * num + 1 - num));
 
 			}
 		}
 		else if (type == "double") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1d + i) = rand() % (static_cast<int>(2 * num + 1 - num));
+				*(adress_type1.adress1d + i) = rand() % (static_cast<int>(2 * num + 1 - num));
 
 			}
 		}
 		else if (type == "long") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1l + i) = rand() % (static_cast<int>(2 * num + 1 - num));
+				*(adress_type1.adress1l + i) = rand() % (static_cast<int>(2 * num + 1 - num));
 			}
 		}
 		else {
@@ -127,25 +127,25 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		srand(time(NULL));
 		if (type == "int") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1 + i) = rand() % (static_cast<int>(2 * num + 1 - num));
+				*(adress_type1.adress1 + i) = rand() % (static_cast<int>(2 * num + 1 - num));
 
 			}
 		}
 		else if (type == "float") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1f + i) = rand() % (static_cast<int>(2 * num + 1 - num));
+				*(adress_type1.adress1f + i) = rand() % (static_cast<int>(2 * num + 1 - num));
 
 			}
 		}
 		else if (type == "double") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1d + i) = rand() % (static_cast<int>(2 * num + 1 - num));
+				*(adress_type1.adress1d + i) = rand() % (static_cast<int>(2 * num + 1 - num));
 
 			}
 		}
 		else if (type == "long") {
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1l + i) = rand() % (static_cast<int>(2 * num + 1 - num));
+				*(adress_type1.adress1l + i) = rand() % (static_cast<int>(2 * num + 1 - num));
 			}
 		}
 		else {
@@ -180,7 +180,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		for (int i = 0; i < column_number; i++) {
 			for (int j = 0; j < row_number; j++) {
-				*(temp + k) = *(adress1 + c + y * column_number);
+				*(temp + k) = *(adress_type1.adress1 + c + y * column_number);
 				k++;
 				y++;
 			}
@@ -188,7 +188,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			c++;
 		}
 		for (int d = 0; d < row_number * column_number; d++) {
-			*(adress2 + d) = *(temp + d);
+			*(adress_type2.adress2 + d) = *(temp + d);
 		}
 	}
 	void MATRICE_V1::MATRICE::tp_float() {
@@ -198,7 +198,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		for (int i = 0; i < column_number; i++) {
 			for (int j = 0; j < row_number; j++) {
-				*(temp + k) = *(adress1f + c + y * column_number);
+				*(temp + k) = *(adress_type1.adress1f + c + y * column_number);
 				k++;
 				y++;
 			}
@@ -206,7 +206,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			c++;
 		}
 		for (int d = 0; d < row_number * column_number; d++) {
-			*(adress2f + d) = *(temp + d);
+			*(adress_type2.adress2f + d) = *(temp + d);
 		}
 	}
 	void MATRICE_V1::MATRICE::tp_double() {
@@ -216,7 +216,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		for (int i = 0; i < column_number; i++) {
 			for (int j = 0; j < row_number; j++) {
-				*(temp + k) = *(adress1d + c + y * column_number);
+				*(temp + k) = *(adress_type1.adress1d + c + y * column_number);
 				k++;
 				y++;
 			}
@@ -224,7 +224,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			c++;
 		}
 		for (int d = 0; d < row_number * column_number; d++) {
-			*(adress2d + d) = *(temp + d);
+			*(adress_type2.adress2d + d) = *(temp + d);
 		}
 	}
 	void MATRICE_V1::MATRICE::tp_long() {
@@ -234,7 +234,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		for (int i = 0; i < column_number; i++) {
 			for (int j = 0; j < row_number; j++) {
-				*(temp + k) = *(adress1l + c + y * column_number);
+				*(temp + k) = *(adress_type1.adress1l + c + y * column_number);
 				k++;
 				y++;
 			}
@@ -242,7 +242,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			c++;
 		}
 		for (int d = 0; d < row_number * column_number; d++) {
-			*(adress2l + d) = *(temp + d);
+			*(adress_type2.adress2l + d) = *(temp + d);
 		}
 	}
 	
@@ -285,22 +285,22 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 	void MATRICE_V1::MATRICE::scm_int(float k){
 		for (int i = 0; i < row_number*column_number; i++) {
-			*(adress2 + i) = static_cast<float>(*(adress1 + i))*k;
+			*(adress_type2.adress2 + i) = static_cast<float>(*(adress_type1.adress1 + i))*k;
 		}
 	}
 	void MATRICE_V1::MATRICE::scm_double(double k) {
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress2d + i) = *(adress1d + i) * k;
+			*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) * k;
 		}
 	}
 	void MATRICE_V1::MATRICE::scm_float(float k) {
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress2f + i) = *(adress1f + i) * k;
+			*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) * k;
 		}
 	}
 	void MATRICE_V1::MATRICE::scm_long(double k) {
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress2l + i) = static_cast<double>(*(adress1l + i)) *k;
+			*(adress_type2.adress2l + i) = static_cast<double>(*(adress_type1.adress1l + i)) *k;
 		}
 	}
 	
@@ -445,9 +445,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1 + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1 + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2 + y) = value;
+					*(adress_type2.adress2 + y) = value;
 					y++;
 					value = 0;
 				}
@@ -467,9 +467,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1 + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1 + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2 + y) = value;
+					*(adress_type2.adress2 + y) = value;
 					y++;
 					value = 0;
 				}
@@ -489,9 +489,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1 + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1 + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2 + y) = value;
+					*(adress_type2.adress2 + y) = value;
 					y++;
 					value = 0;
 				}
@@ -511,9 +511,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1 + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1 + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2 + y) = value;
+					*(adress_type2.adress2 + y) = value;
 					y++;
 					value = 0;
 				}
@@ -533,9 +533,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1d + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1d + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2d + y) = value;
+					*(adress_type2.adress2d + y) = value;
 					y++;
 					value = 0;
 				}
@@ -555,9 +555,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1d + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1d + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2d + y) = value;
+					*(adress_type2.adress2d + y) = value;
 					y++;
 					value = 0;
 				}
@@ -577,9 +577,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1d + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1d + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2d + y) = value;
+					*(adress_type2.adress2d + y) = value;
 					y++;
 					value = 0;
 				}
@@ -599,9 +599,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1d + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1d + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2d + y) = value;
+					*(adress_type2.adress2d + y) = value;
 					y++;
 					value = 0;
 				}
@@ -621,9 +621,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1f + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1f + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2f + y) = value;
+					*(adress_type2.adress2f + y) = value;
 					y++;
 					value = 0;
 				}
@@ -643,9 +643,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1f + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1f + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2f + y) = value;
+					*(adress_type2.adress2f + y) = value;
 					y++;
 					value = 0;
 				}
@@ -665,9 +665,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1f + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1f + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2f + y) = value;
+					*(adress_type2.adress2f + y) = value;
 					y++;
 					value = 0;
 				}
@@ -687,9 +687,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1f + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1f + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2f + y) = value;
+					*(adress_type2.adress2f + y) = value;
 					y++;
 					value = 0;
 				}
@@ -709,9 +709,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1l + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1l + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2l + y) = value;
+					*(adress_type2.adress2l + y) = value;
 					y++;
 					value = 0;
 				}
@@ -731,9 +731,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1l + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1l + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2l + y) = value;
+					*(adress_type2.adress2l + y) = value;
 					y++;
 					value = 0;
 				}
@@ -753,9 +753,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1l + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1l + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2l + y) = value;
+					*(adress_type2.adress2l + y) = value;
 					y++;
 					value = 0;
 				}
@@ -775,9 +775,9 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 				for (int i = 0; i < column2; i++) {
 					selection = i % column2;
 					for (int j = 0; j < column_number; j++) {
-						value += *(adress1l + j + column_number * k) * *(adress_2 + selection + column2 * j);
+						value += *(adress_type1.adress1l + j + column_number * k) * *(adress_2 + selection + column2 * j);
 					}
-					*(adress2l + y) = value;
+					*(adress_type2.adress2l + y) = value;
 					y++;
 					value = 0;
 				}
@@ -792,7 +792,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) * *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -802,7 +802,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) * *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -812,7 +812,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) * *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -822,7 +822,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) * *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -839,7 +839,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) * *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -849,7 +849,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) * *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -859,7 +859,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) * *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -869,7 +869,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) * *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -884,7 +884,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) * *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -894,7 +894,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) * *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -904,7 +904,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) * *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -914,7 +914,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) * *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -929,7 +929,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) * *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -939,7 +939,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) * *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -949,7 +949,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) * *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -959,7 +959,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) * *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) * *(adress3 + i);
 				}
 			}
 			else {
@@ -976,7 +976,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) / *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -986,7 +986,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) / *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -996,7 +996,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) / *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1006,7 +1006,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) / *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1021,7 +1021,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) / *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1031,7 +1031,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) / *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1041,7 +1041,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) / *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1051,7 +1051,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) / *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1066,7 +1066,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) / *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1076,7 +1076,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) / *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1086,7 +1086,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) / *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1096,7 +1096,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) / *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1111,7 +1111,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) / *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1121,7 +1121,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) / *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1131,7 +1131,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) / *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1141,7 +1141,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) / *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) / *(adress3 + i);
 				}
 			}
 			else {
@@ -1158,7 +1158,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) + *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1168,7 +1168,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) + *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1178,7 +1178,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) + *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1188,7 +1188,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) + *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1203,7 +1203,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) + *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1213,7 +1213,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) + *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1223,7 +1223,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) + *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1233,7 +1233,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) + *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1248,7 +1248,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) + *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1258,7 +1258,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) + *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1268,7 +1268,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) + *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1278,7 +1278,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) + *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1293,7 +1293,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) + *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1303,7 +1303,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) + *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1313,7 +1313,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) + *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1323,7 +1323,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) + *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) + *(adress3 + i);
 				}
 			}
 			else {
@@ -1341,7 +1341,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) - *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1351,7 +1351,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) - *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1361,7 +1361,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) *- *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) *- *(adress3 + i);
 				}
 			}
 			else {
@@ -1371,7 +1371,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) - *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1386,7 +1386,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) - *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1396,7 +1396,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) - *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1406,7 +1406,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) - *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1416,7 +1416,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) - *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1431,7 +1431,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) - *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1441,7 +1441,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) - *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1451,7 +1451,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) - *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1461,7 +1461,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) - *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1476,7 +1476,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (type == "int") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2 + i) = *(adress1 + i) - *(adress3 + i);
+					*(adress_type2.adress2 + i) = *(adress_type1.adress1 + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1486,7 +1486,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "double") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2d + i) = *(adress1d + i) - *(adress3 + i);
+					*(adress_type2.adress2d + i) = *(adress_type1.adress1d + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1496,7 +1496,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "float") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2f + i) = *(adress1f + i) - *(adress3 + i);
+					*(adress_type2.adress2f + i) = *(adress_type1.adress1f + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1506,7 +1506,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else if (type == "long") {
 			if (row_number == row && column_number == column) {
 				for (int i = 0; i < row * column; i++) {
-					*(adress2l + i) = *(adress1l + i) - *(adress3 + i);
+					*(adress_type2.adress2l + i) = *(adress_type1.adress1l + i) - *(adress3 + i);
 				}
 			}
 			else {
@@ -1543,7 +1543,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (row_number == column_number) {
 			for (int i = 0; i < row_number * column_number; i++) {
 				if ((i<(index_row - 1) * row_number || i>(index_row) * row_number - 1) && i % row_number != index_column - 1) {
-					*(adress2 + k) = *(adress1 + i);
+					*(adress_type2.adress2 + k) = *(adress_type1.adress1 + i);
 					k++;
 				}
 				else {
@@ -1562,7 +1562,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (row_number == column_number) {
 			for (int i = 0; i < row_number * column_number; i++) {
 				if ((i<(index_row - 1) * row_number || i>(index_row) * row_number - 1) && i % row_number != index_column - 1) {
-					*(adress2d + k) = *(adress1d + i);
+					*(adress_type2.adress2d + k) = *(adress_type1.adress1d + i);
 					k++;
 				}
 				else {
@@ -1581,7 +1581,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (row_number == column_number) {
 			for (int i = 0; i < row_number * column_number; i++) {
 				if ((i<(index_row - 1) * row_number || i>(index_row) * row_number - 1) && i % row_number != index_column - 1) {
-					*(adress2f + k) = *(adress1f + i);
+					*(adress_type2.adress2f + k) = *(adress_type1.adress1f + i);
 					k++;
 				}
 				else {
@@ -1600,7 +1600,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		if (row_number == column_number) {
 			for (int i = 0; i < row_number * column_number; i++) {
 				if ((i<(index_row - 1) * row_number || i>(index_row) * row_number - 1) && i % row_number != index_column - 1) {
-					*(adress2l + k) = *(adress1l + i);
+					*(adress_type2.adress2l + k) = *(adress_type1.adress1l + i);
 					k++;
 				}
 				else {
@@ -1632,23 +1632,23 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			type = "float";
 			float memory = 0;
 
-			adress1f = new float[row_number * column_number];
-			adress2f = new float[row_number * column_number];
+			adress_type1.adress1f = new float[row_number * column_number];
+			adress_type2.adress2f = new float[row_number * column_number];
 
 			for (int i = 0; i < row_number * column_number; i++){
-				*(adress1f + i) = static_cast<float>(*(adress1 + i));
-				*(adress2f + i) = static_cast<float>(*(adress2 + i));
+				*(adress_type1.adress1f + i) = static_cast<float>(*(adress_type1.adress1 + i));
+				*(adress_type2.adress2f + i) = static_cast<float>(*(adress_type2.adress2 + i));
 			}
 
 			memory = determinant_float();
 
 			type = "int";
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1f + i) = 0;
-				*(adress2f + i) = 0;
+				*(adress_type1.adress1f + i) = 0;
+				*(adress_type2.adress2f + i) = 0;
 			}
-			delete[]adress1f;
-			delete[]adress2f;
+			delete[]adress_type1.adress1f;
+			delete[]adress_type2.adress2f;
 			return memory;
 		}
 		else if (type == "long") {
@@ -1656,24 +1656,24 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			type = "double";
 			double memory = 0;
 
-			adress1d = new double[row_number * column_number];
-			adress2d = new double[row_number * column_number];
+			adress_type1.adress1d = new double[row_number * column_number];
+			adress_type2.adress2d = new double[row_number * column_number];
 
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1d + i) = static_cast<double>(*(adress1l + i));
-				*(adress2d + i) = static_cast<double>(*(adress2l + i));
+				*(adress_type1.adress1d + i) = static_cast<double>(*(adress_type1.adress1l + i));
+				*(adress_type2.adress2d + i) = static_cast<double>(*(adress_type2.adress2l + i));
 			}
 
 			memory = determinant_double();
 			type = "long";
 
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1d + i) = 0;
-				*(adress2d + i) = 0;
+				*(adress_type1.adress1d + i) = 0;
+				*(adress_type2.adress2d + i) = 0;
 			}
 
-			delete[]adress1f;
-			delete[]adress2f;
+			delete[]adress_type1.adress1f;
+			delete[]adress_type2.adress2f;
 			return memory;
 		}
 		else {
@@ -1691,10 +1691,10 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else {
 
 			float memory = 0;
-			if (row_number == 1 && column_number == 1) { return *adress1f; }
+			if (row_number == 1 && column_number == 1) { return *adress_type1.adress1f; }
 
 			else if (row_number == 2 && column_number == 2) {
-				memory = (*(adress1f) * *(adress1f + 3)) - (*(adress1f + 1) * *(adress1f + 2));
+				memory = (*(adress_type1.adress1f) * *(adress_type1.adress1f + 3)) - (*(adress_type1.adress1f + 1) * *(adress_type1.adress1f + 2));
 			}
 			else {
 				// Allocate memory for temporary matrices
@@ -1706,7 +1706,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 					// Create sub-matrix and copy its contents into a 1D array
 					sub_minor_matrice(1, i + 1);
 					for (int j = 0; j < (column_number - 1) * (column_number - 1); j++) {
-						*(adress1f_temp + j) = *(adress2f + j);
+						*(adress1f_temp + j) = *(adress_type2.adress2f + j);
 					}
 					// Create temporary matrix object and calculate its determinant
 					MATRICE sub_object(adress1f_temp, adress2f_temp, row_number - 1, column_number - 1);
@@ -1714,13 +1714,15 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 					// Add the (i,j) element times its cofactor to the determinant
 					if (i % 2 == 0) {
-						memory += *(adress1f + i) * det;
+						memory += *(adress_type1.adress1f + i) * det;
 					}
 					else {
-						memory -= *(adress1f + i) * det;
+						memory -= *(adress_type1.adress1f + i) * det;
 					}
 				}
-
+				for (int i = 0; i < row_number * column_number; i++) {
+					*(adress_type2.adress2f + i) = 0;
+				}
 				// Deallocate memory for temporary matrices
 				delete[] adress1f_temp;
 				delete[] adress2f_temp;
@@ -1737,10 +1739,10 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		else {
 
 			double memory = 0;
-			if (row_number == 1 && column_number == 1) { return *adress1d; }
+			if (row_number == 1 && column_number == 1) { return *adress_type1.adress1d; }
 
 			else if (row_number == 2 && column_number == 2) {
-				memory = (*(adress1d) * *(adress1d + 3)) - (*(adress1d + 1) * *(adress1d + 2));
+				memory = (*(adress_type1.adress1d) * *(adress_type1.adress1d + 3)) - (*(adress_type1.adress1d + 1) * *(adress_type1.adress1d + 2));
 			}
 			else {
 				// Allocate memory for temporary matrices
@@ -1752,7 +1754,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 					// Create sub-matrix and copy its contents into a 1D array
 					sub_minor_matrice(1, i + 1);
 					for (int j = 0; j < (column_number - 1) * (column_number - 1); j++) {
-						*(adress1d_temp + j) = *(adress2d + j);
+						*(adress1d_temp + j) = *(adress_type2.adress2d + j);
 					}
 					// Create temporary matrix object and calculate its determinant
 					MATRICE sub_object(adress1d_temp, adress2d_temp, row_number - 1, column_number - 1);
@@ -1760,13 +1762,15 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 					// Add the (i,j) element times its cofactor to the determinant
 					if (i % 2 == 0) {
-						memory += *(adress1d + i) * det;
+						memory += *(adress_type1.adress1d + i) * det;
 					}
 					else {
-						memory -= *(adress1d + i) * det;
+						memory -= *(adress_type1.adress1d + i) * det;
 					}
 				}
-
+				for (int i = 0; i < row_number * column_number; i++) {
+					*(adress_type2.adress2d + i) = 0;
+				}
 				// Deallocate memory for temporary matrices
 				delete[] adress1d_temp;
 				delete[] adress2d_temp;
@@ -1796,41 +1800,41 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			if (type == "double") {
 				//Writing the values into another (m-1)x(m-1) ad_1d
 				for (int i = 0; i < (row_number - 1) * (column_number - 1); i++) {
-					*(ad_1d + i) = (*(adress2d + i));
+					*(ad_1d + i) = (*(adress_type2.adress2d + i));
 				}
-				//Reseting the mxm adress2d since the sub_minor_matrice filled it
+				//Reseting the mxm adress_type2.adress2d since the sub_minor_matrice filled it
 				for (int i = 0; i < (row_number) * (column_number); i++) {
-					*(adress2d + i) = 0;
+					*(adress_type2.adress2d + i) = 0;
 				}
 			}
 			else if (type == "float") {
 				//Writing the values into another (m-1)x(m-1) ad_1d
 				for (int i = 0; i < (row_number - 1) * (column_number - 1); i++) {
-					*(ad_1d + i) = static_cast<double>(*(adress2f + i));
+					*(ad_1d + i) = static_cast<double>(*(adress_type2.adress2f + i));
 				}
-				//Reseting the mxm adress2f since the sub_minor_matrice filled it
+				//Reseting the mxm adress_type2.adress2f since the sub_minor_matrice filled it
 				for (int i = 0; i < (row_number) * (column_number); i++) {
-					*(adress2f + i) = 0;
+					*(adress_type2.adress2f + i) = 0;
 				}
 			}
 			else if (type == "long") {
 				//Writing the values into another (m-1)x(m-1) ad_1d
 				for (int i = 0; i < (row_number - 1) * (column_number - 1); i++) {
-					*(ad_1d + i) = static_cast<double>(*(adress2l + i));
+					*(ad_1d + i) = static_cast<double>(*(adress_type2.adress2l + i));
 				}
-				//Reseting the mxm adress2l since the sub_minor_matrice filled it
+				//Reseting the mxm adress_type2.adress2l since the sub_minor_matrice filled it
 				for (int i = 0; i < (row_number) * (column_number); i++) {
-					*(adress2l + i) = 0;
+					*(adress_type2.adress2l + i) = 0;
 				}
 			}
 			else if (type == "int") {
 				//Writing the values into another (m-1)x(m-1) ad_1d
 				for (int i = 0; i < (row_number - 1) * (column_number - 1); i++) {
-					*(ad_1d + i) = static_cast<double>(*(adress2 + i));
+					*(ad_1d + i) = static_cast<double>(*(adress_type2.adress2 + i));
 				}
-				//Reseting the mxm adress2 since the sub_minor_matrice filled it
+				//Reseting the mxm adress_type2.adress2 since the sub_minor_matrice filled it
 				for (int i = 0; i < (row_number) * (column_number); i++) {
-					*(adress2 + i) = 0;
+					*(adress_type2.adress2 + i) = 0;
 				}
 			}
 			else {
@@ -1888,7 +1892,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			}
 			for (int i = 0; i < row_number; i++) {
 				for (int j = 0; j < row_number; j++) {
-					*(adress2 + i * (row_number)+j) = *(temp + i * (row_number)+j);
+					*(adress_type2.adress2 + i * (row_number)+j) = *(temp + i * (row_number)+j);
 				}
 			}
 			delete[] temp;
@@ -1911,7 +1915,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			}
 			for (int i = 0; i < row_number; i++) {
 				for (int j = 0; j < row_number; j++) {
-					*(adress2f + i * (row_number)+j) = *(temp + i * (row_number)+j);
+					*(adress_type2.adress2f + i * (row_number)+j) = *(temp + i * (row_number)+j);
 				}
 			}
 			delete[] temp;
@@ -1933,7 +1937,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			}
 			for (int i = 0; i < row_number; i++) {
 				for (int j = 0; j < row_number; j++) {
-					*(adress2d + i * (row_number)+j) = *(temp + i * (row_number)+j);
+					*(adress_type2.adress2d + i * (row_number)+j) = *(temp + i * (row_number)+j);
 				}
 			}
 			delete[] temp;
@@ -1955,7 +1959,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			}
 			for (int i = 0; i < row_number; i++) {
 				for (int j = 0; j < row_number; j++) {
-					*(adress2l + i * (row_number)+j) = *(temp + i * (row_number)+j);
+					*(adress_type2.adress2l + i * (row_number)+j) = *(temp + i * (row_number)+j);
 				}
 			}
 			delete[] temp;
@@ -1999,7 +2003,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		for (int i = 0; i < row_number; i++) {
 			for (int j = 0; j < column_number; j++) {
-				*(adress2 + i * row_number + j) *= pow(-1, (i + 1 + j + 1));
+				*(adress_type2.adress2 + i * row_number + j) *= pow(-1, (i + 1 + j + 1));
 			}
 		}
 		return 1;
@@ -2010,7 +2014,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		for (int i = 0; i < row_number; i++) {
 			for (int j = 0; j < column_number; j++) {
-				*(adress2d + i * row_number + j) *= pow(-1, (i + 1 + j + 1));
+				*(adress_type2.adress2d + i * row_number + j) *= pow(-1, (i + 1 + j + 1));
 			}
 		}
 		return 1;
@@ -2019,7 +2023,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		minor_matrice();
 		for (int i = 0; i < row_number; i++) {
 			for (int j = 0; j < column_number; j++) {
-				*(adress2f + i * row_number + j) *= pow(-1, (i + 1 + j + 1));
+				*(adress_type2.adress2f + i * row_number + j) *= pow(-1, (i + 1 + j + 1));
 			}
 		}
 		return 1;
@@ -2029,7 +2033,7 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		for (int i = 0; i < row_number; i++) {
 			for (int j = 0; j < column_number; j++) {
-				*(adress2l + i * row_number + j) *= pow(-1, (i + 1 + j + 1));
+				*(adress_type2.adress2l + i * row_number + j) *= pow(-1, (i + 1 + j + 1));
 			}
 		}
 		return 1;
@@ -2104,12 +2108,12 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		int* temp = new int[row_number * column_number];
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(temp + i) = *(adress1+i);
-			*(adress1+i) = *(adress2+i);
+			*(temp + i) = *(adress_type1.adress1+i);
+			*(adress_type1.adress1+i) = *(adress_type2.adress2+i);
 		}
 		transpose();
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1 + i) = *(temp + i);
+			*(adress_type1.adress1 + i) = *(temp + i);
 		}
 		delete[] temp;
 		return 1;
@@ -2120,12 +2124,12 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		double* temp = new double[row_number * column_number];
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(temp + i) = *(adress1d + i);
-			*(adress1d + i) = *(adress2d + i);
+			*(temp + i) = *(adress_type1.adress1d + i);
+			*(adress_type1.adress1d + i) = *(adress_type2.adress2d + i);
 		}
 		transpose();
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1d + i) = *(temp + i);
+			*(adress_type1.adress1d + i) = *(temp + i);
 		}
 		delete[] temp;
 		return 1;
@@ -2136,12 +2140,12 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		float* temp = new float[row_number * column_number];
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(temp + i) = *(adress1f + i);
-			*(adress1f + i) = *(adress2f + i);
+			*(temp + i) = *(adress_type1.adress1f + i);
+			*(adress_type1.adress1f + i) = *(adress_type2.adress2f + i);
 		}
 		transpose();
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1f + i) = *(temp + i);
+			*(adress_type1.adress1f + i) = *(temp + i);
 		}
 		delete[] temp;
 		return 1;
@@ -2152,12 +2156,12 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		long* temp = new long[row_number * column_number];
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(temp + i) = *(adress1l + i);
-			*(adress1l + i) = *(adress2l + i);
+			*(temp + i) = *(adress_type1.adress1l + i);
+			*(adress_type1.adress1l + i) = *(adress_type2.adress2l + i);
 		}
 		transpose();
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1l + i) = *(temp + i);
+			*(adress_type1.adress1l + i) = *(temp + i);
 		}
 		delete[] temp;
 		return 1;
@@ -2197,15 +2201,15 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 			adjugate_matrice();
 			double* temp = new double[row_number * column_number];
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(temp + i) = *(adress1d + i);
+				*(temp + i) = *(adress_type1.adress1d + i);
 			}
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1d + i) = *(adress2d + i);
+				*(adress_type1.adress1d + i) = *(adress_type2.adress2d + i);
 			};
 			scalermultiplication(1 / x);
 
 			for (int i = 0; i < row_number * column_number; i++) {
-				*(adress1d + i) = *(temp + i);
+				*(adress_type1.adress1d + i) = *(temp + i);
 			}
 			delete[]temp;
 
@@ -2220,16 +2224,16 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 		
 		float* temp = new float[row_number * column_number];
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(temp + i) = *(adress1f + i);
+			*(temp + i) = *(adress_type1.adress1f + i);
 		}
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1f + i) = *(adress2f + i);
+			*(adress_type1.adress1f + i) = *(adress_type2.adress2f + i);
 		};
 		scalermultiplication(1 / x);
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1f + i) = *(temp + i);
+			*(adress_type1.adress1f + i) = *(temp + i);
 		}
 		delete[]temp;
 		return 1;
@@ -2242,16 +2246,16 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		float* temp = new float[row_number * column_number];
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(temp + i) = *(adress1 + i);
+			*(temp + i) = *(adress_type1.adress1 + i);
 		}
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1 + i) = *(adress2 + i);
+			*(adress_type1.adress1 + i) = *(adress_type2.adress2 + i);
 		}
 		scalermultiplication(1 / x);
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1 + i) = *(temp + i);
+			*(adress_type1.adress1 + i) = *(temp + i);
 		}
 		delete[]temp;
 		return 1;
@@ -2264,16 +2268,16 @@ MATRICE_V1::MATRICE::MATRICE(long* adr, double* adr2, int row_, int col_) {
 
 		double* temp = new double[row_number * column_number];
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(temp + i) = *(adress1l + i);
+			*(temp + i) = *(adress_type1.adress1l + i);
 		}
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1l + i) = *(adress2l + i);
+			*(adress_type1.adress1l + i) = *(adress_type2.adress2l + i);
 		};
 		scalermultiplication(1 / x);
 
 		for (int i = 0; i < row_number * column_number; i++) {
-			*(adress1l + i) = *(temp + i);
+			*(adress_type1.adress1l + i) = *(temp + i);
 		}
 		delete[]temp;
 		return 1;

@@ -17,18 +17,21 @@ private:
 	int row_number;
 	int column_number;
 
-	int* adress1;
-	float* adress2;
-
-	float* adress1f;
-	float* adress2f;
-
-	double* adress1d;
-	double* adress2d;
-
-	long* adress1l;
-
-	double* adress2l;
+	union adress1 {
+		int* adress1;
+		float* adress1f;
+		long* adress1l;
+		double* adress1d;
+	};
+	union adress2 {
+		float* adress2;
+		float* adress2f;
+		double* adress2d;
+		double* adress2l;
+	};
+	
+	adress1 adress_type1;
+	adress2 adress_type2;
 
 public:
 	MATRICE(int* adr, float* adr2, int row_, int col_);

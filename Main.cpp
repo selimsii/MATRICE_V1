@@ -3,17 +3,17 @@
 
 int main() {
 
-	float arr1[5][5] = { 0 };
-	float arr2[5][5] = { 0 };
-	float arr3[5][5] = { 0 };
-	float arr4[5][5] = { 0 };
+	float arr1[4][4] = { 0 };
+	float arr2[4][4] = { 0 };
+	float arr3[4][4] = { 0 };
+	float arr4[4][4] = { 0 };
 
 
 
-	MATRICE_V1::MATRICE matrice1(&arr1[0][0], &arr2[0][0], 5, 5);
-	MATRICE_V1::MATRICE matrice2(&arr3[0][0], &arr4[0][0], 5, 5);
+	MATRICE_V1::MATRICE matrice1(&arr1[0][0], &arr2[0][0], 4, 4);
+	MATRICE_V1::MATRICE matrice2(&arr3[0][0], &arr4[0][0], 4, 4);
 
-	matrice1.random(20);                                       //  Fills matrice2 randomly between -20 and 20
+	matrice1.random(10);                                       //  Fills matrice2 randomly between -20 and 20
 	/*
 	matrice1.adjugate_matrice();                              //  adjugate matrice of arr1
 	matrice1.transpose();                                    //  transpose of arr1
@@ -28,24 +28,26 @@ int main() {
 	matrice1.multiplication(&arr3[0][0],5,5);       // arr1*arr3 matrice multiplication
 	matrice1.summation(&arr3[0][0], 5, 5);         // arr1+arr3
 	matrice1.subtraction(&arr3[0][0], 5, 5);      // arr1-arr3
+	matrice1.scalermultiplication(8.0);          // arr1*8
 	*/
 
-	matrice1.scalermultiplication(8.0);          // arr1*8
+	cout << matrice1.cofactor_matrice()<<endl;                             //  cofactor matrice of arr1
 
 
 	cout << "The formed Matrice is:" << endl;
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 5; j++) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
 			cout << arr1[i][j] << "\t";
 		}
 		cout << endl;
 	}
 	cout << endl << "The Result is:" << endl;
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 5; j++) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
 			cout << arr2[i][j] << "\t";
 		}
 		cout << endl;
 	}
+
 	return 0;
 }
