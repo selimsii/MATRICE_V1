@@ -4,6 +4,8 @@
 **IDE:Visual Studio 2022**
 
 **Operating System:Windows 10 Pro For Workstations**
+
+**C++ Language Standard:ISO C++17 Standard (/std:c++17)**
 ***********************************************************************************************************************************************************************
 
 # MATRICE LIBRARY V1:
