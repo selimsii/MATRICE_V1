@@ -5,7 +5,7 @@
 
 **Operating System:Windows 10 Pro For Workstations**
 
-**C++ Language Standard:ISO C++14 Standard (/std:c++17)**
+**C++ Language Standard:ISO C++14 Standard (/std:c++14)**
 ***********************************************************************************************************************************************************************
 
 # MATRICE LIBRARY V1:
