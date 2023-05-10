@@ -25,7 +25,7 @@
 6) MATRICE_V1 namespace is used in the library. 
 
   **Includes the following functions in MATRICE Class:**
-
+ - Random Function (To fill the empty matrice with random values between +- input)<br>
  - Matrice Transpose <br>
  - Scaler Multiplication <br>
  - Vectoral Multiplication <br>
