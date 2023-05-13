@@ -30,6 +30,7 @@
  - Scaler Multiplication <br>
  - Vectoral Multiplication <br>
  - Elementwise Multiplication <br>
+ - Elementwise Division <br>
  - Summation <br>
  - Subtraction <br>
  - Sub Minor Matrice (   (m-1)x(n-1) sub minor matrice of a mxn matrice  ) <br>
