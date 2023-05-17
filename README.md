@@ -12,7 +12,7 @@
 
   **The library works as follows:**
   
-1) It takes totally 4 inputs as first adress of the matrice you want to operate (denoted as: adress_type1.adress1, adress_type1.adress1d, adress_type1.adress1f, adress_type1.adress1l w.r.t matrice type), The first adress of the empty matrice that you want to print the result in (denoted as: adress_type2.adress2, adress_type2.adress2d, adress_type2.adress2f, adress_type2.adress2l w.r.t matrice type), row_number and column_number.
+1) Matrice class takes totally 4 inputs as first adress of the matrice you want to operate (denoted as: adress_type1.adress1, adress_type1.adress1d, adress_type1.adress1f, adress_type1.adress1l w.r.t matrice type), The first adress of the empty matrice that you want to print the result in (denoted as: adress_type2.adress2, adress_type2.adress2d, adress_type2.adress2f, adress_type2.adress2l w.r.t matrice type), row_number and column_number.
 
 2) Then it calls the overloaded constructors to assign the inputs to abstracted variables. 
 
